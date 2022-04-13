@@ -1,0 +1,76 @@
+.App {
+ text-align: center;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: "Eulyoo - SemiBold";
+  src: url("../font/Eulyoo1945-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Eulyoo - Regular";
+  src: url("../font/Eulyoo1945-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "NanumSquare - Bold";
+  src: url("../font/NanumSquareOTF_acB.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic - Light";
+  src: url("../font/NanumBarunGothicLight.ttf") format("opentype");
+}
+
+
+:root{
+  --main-red: #FF4401;
+  --progress-gray: #404040;
+  --font-gray: #BCB8B8;
+  --kakao-yellow: #F9E000;
+}

@@ -1,0 +1,59 @@
+.main_page{
+    font-family: "Eulyoo - Regular";
+    font-size: 11pt;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    white-space: pre-wrap;
+    align-items: center;
+}
+
+.main_page > .drink_it_image{
+    width: 500px;
+    height: 170px;
+}
+
+.main_page .page_title_container{
+    padding: 20px;
+    font-family: "NanumBarunGothic - Light";
+}
+
+.main_page .page_title_container > .title{
+    font-size: 15pt;
+    padding: 15px;
+}
+
+.main_page .page_title_container >.subscribe{
+    color: var(--main-red);
+}
+
+.main_page .arc_data{
+    padding: 10px;
+}
+
+
+.main_page .arc_data .arc_image{
+    width: 200px;
+    height: 150px;
+}
+
+.main_page .arc_data .arc_name{
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+}
+
+.main_page .arc_data .arc_date{
+    font-size: 8pt;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_page .arc_data > a{
+    text-decoration: none;
+    color: white;
+}
