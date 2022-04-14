@@ -9,7 +9,7 @@ type Props = {
 };
 export const UseGaPageTracking = (props: Props) => {
     const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID ?? ''
-
+    
     // const location = useLocation();
     const [initialized, setInitialized] = useState(false);
 
