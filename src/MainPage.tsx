@@ -2,6 +2,7 @@ import * as React from 'react';
 import messages from "./Constant/messages";
 import './Styles/css/MainPage.css'
 import {listPreset} from "./listPreset";
+import { UseGaPageTracking } from './UseGAPageTracking';
 
 type Props = {
 
@@ -9,6 +10,7 @@ type Props = {
 export const MainPage = (props: Props) => {
     return (
         <div className='main_page'>
+            <UseGaPageTracking />
             <img className="drink_it_image" alt='drink_it' src={require(`./Images/drinkItHeader.png`)} />
             <div className="page_title_container">
                 <div className="title">{messages.mainTitle}</div>
