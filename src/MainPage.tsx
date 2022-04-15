@@ -88,11 +88,11 @@ export const MainPage = (props: Props) => {
             <div className="page_title_container">
                 <div className="title">{messages.mainTitle}</div>
                 <div className="content">{messages.explainMessages}</div>
-                <a className="subscribe" href={`https://page.stibee.com/subscriptions/148567`}>{messages.subscribeMessages}</a>
+                <a className="subscribe" id="subscribe" href={`https://page.stibee.com/subscriptions/148567`}>{messages.subscribeMessages}</a>
             </div>
             {listPreset?.map(arc => (
                 <div className="arc_data" key={arc.id}>
-                    <a href={arc.link}>
+                    <a href={arc.link} id="link_to_arc">
                         <img className="arc_image" alt='arc_img' src={require(`./Images/${arc.image}`)} />
                         <div className="arc_name">{arc.name}</div>
                         <div className="arc_date">{arc.date}</div>
