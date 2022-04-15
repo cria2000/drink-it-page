@@ -31,6 +31,7 @@ export const MainPage = (props: Props) => {
     }, [])
 
     const shareKakao = () => {
+        console.log('ERROR!', window?.Kakao?.Link)
         window?.Kakao?.Link?.sendDefault({
             objectType: 'feed',
             content: {
