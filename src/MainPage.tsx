@@ -13,7 +13,6 @@ export const MainPage = (props: Props) => {
     const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID ?? ''
 
     useEffect(() => {
-        console.log(kakaoInit)
         const script = document.createElement('script')
         script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
         script.async = true
@@ -29,6 +28,29 @@ export const MainPage = (props: Props) => {
             document.body.removeChild(script)
         }
     }, [kakaoInit])
+
+    useEffect(() => {
+        const tagScript = document.createElement('script')
+        tagScript.src= 'https://www.googletagmanager.com/gtm.js?id='
+        tagScript.async = true
+        tagScript.innerHTML = `
+            function(w,d,s,l,i)
+            {
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5GC2QZP');`
+
+        document.body.appendChild(tagScript)
+        return () => {
+            document.body.removeChild(tagScript)
+        }
+    }, [])
 
     useEffect(() => {
         ReactGA.initialize(TRACKING_ID);
