@@ -13,14 +13,16 @@ export const MainPage = (props: Props) => {
     const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID ?? ''
 
     useEffect(() => {
+        console.log(kakaoInit)
         const script = document.createElement('script')
         script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
         script.async = true
 
         document.body.appendChild(script)
-        if(!window?.Kakao?.isInitialized() || !kakaoInit) {
+        if(!window?.Kakao?.isInitialized()) {
             window?.Kakao?.init?.(process.env.REACT_APP_KAKAO)
-            setKakaoInit(true)
+
+            setKakaoInit(!kakaoInit)
         }
 
         return () => {
