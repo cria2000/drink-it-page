@@ -10,6 +10,7 @@ type Props = {
 };
 export const MainPage = (props: Props) => {
     const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID ?? ''
+
     useEffect(() => {
         ReactGA.initialize(TRACKING_ID);
         ReactGA.set({page: window.location.pathname});
