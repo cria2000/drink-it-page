@@ -57,3 +57,7 @@
     text-decoration: none;
     color: white;
 }
+
+.main_page .kakao_share_button{
+    margin: 30px;
+}

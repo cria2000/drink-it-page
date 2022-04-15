@@ -24,8 +24,8 @@ export const MainPage = (props: Props) => {
 
         document.body.appendChild(script)
 
-        if(!window?.Kakao?.isInitialized) window?.Kakao?.init?.(process.env["REACT_APP_KAKAO"])
-
+        if(!window?.Kakao?.isInitialized()) window?.Kakao?.init?.(process.env.REACT_APP_KAKAO)
+        console.log(process.env.REACT_APP_KAKAO)
         return () => {
             document.body.removeChild(script)
         }
@@ -37,16 +37,16 @@ export const MainPage = (props: Props) => {
             content: {
                 title: '나의 DrinkIt은 무엇일까?',
                 description: '당신과 잘 어울리는 공간과 술을 알아보세요!',
-                imageUrl: './Images/drinkIt.png',
+                imageUrl: './Images/drinkItHeader.png',
                 link:{
-                    webUrl: 'http://localhost:3000',
+                    webUrl: 'https://luxury-madeleine-944cc7.netlify.app',
                 }
             },
             buttons: [
                 {
                     title: '알아보러가자!',
                     link: {
-                        webUrl: 'http://localhost:3000',
+                        webUrl: 'https://luxury-madeleine-944cc7.netlify.app',
                     }
                 }
             ]
@@ -72,7 +72,7 @@ export const MainPage = (props: Props) => {
                     </a>
                 </div>
             ))}
-            <button className='result_page_share_button' id='kakao-link-btn' onClick={shareKakao}>{'카카오톡으로 공유하기' }</button>
+            <button className='kakao_share_button' id='kakao-link-btn' onClick={shareKakao}>{'카카오톡으로 공유하기' }</button>
         </div>
     );
 };
