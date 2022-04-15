@@ -3,19 +3,14 @@ import messages from "./Constant/messages";
 import './Styles/css/MainPage.css'
 import {listPreset} from "./listPreset";
 import ReactGA from 'react-ga';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 type Props = {
 
 };
 export const MainPage = (props: Props) => {
+    const [kakaoInit, setKakaoInit] = useState<boolean>(false)
     const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID ?? ''
-
-    useEffect(() => {
-        ReactGA.initialize(TRACKING_ID);
-        ReactGA.set({page: window.location.pathname});
-        ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
 
     useEffect(() => {
         const script = document.createElement('script')
@@ -23,17 +18,26 @@ export const MainPage = (props: Props) => {
         script.async = true
 
         document.body.appendChild(script)
+        if(!window?.Kakao?.isInitialized() || !kakaoInit) {
+            window?.Kakao?.init?.(process.env.REACT_APP_KAKAO)
+            setKakaoInit(true)
+        }
 
-        if(!window?.Kakao?.isInitialized()) window?.Kakao?.init?.(process.env.REACT_APP_KAKAO)
         return () => {
             document.body.removeChild(script)
         }
-    }, [])
+    }, [kakaoInit])
+
+    useEffect(() => {
+        ReactGA.initialize(TRACKING_ID);
+        ReactGA.set({page: window.location.pathname});
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     const shareKakao = () => {
-        console.log('ERROR!', window?.Kakao?.Link)
         window?.Kakao?.Link?.sendDefault({
             objectType: 'feed',
+
             content: {
                 title: '나의 DrinkIt은 무엇일까?',
                 description: '🥂당신과 잘 어울리는 공간과 술을 알아보세요🥂',
@@ -52,7 +56,6 @@ export const MainPage = (props: Props) => {
             ]
         })
     }
-
 
 
     return (
