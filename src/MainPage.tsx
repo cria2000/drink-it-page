@@ -23,7 +23,8 @@ export const MainPage = (props: Props) => {
 
             setKakaoInit(!kakaoInit)
         }
-
+        console.log(window?.Kakao?.Link)
+        console.log(window?.Kakao?.isInitialized())
         return () => {
             document.body.removeChild(script)
         }
