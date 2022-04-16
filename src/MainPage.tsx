@@ -58,8 +58,8 @@ export const MainPage = (props: Props) => {
             objectType: 'feed',
 
             content: {
-                title: '나의 DrinkIt은 무엇일까?',
-                description: '🥂당신과 잘 어울리는 공간과 술을 알아보세요🥂',
+                title: '술을 즐기는 이들을 위한 브랜드, Drink It',
+                description: '🥂drink it이 소개해주는 다양한 술과 공간을 통해 자신만의 취향을 발견해보세요🥂',
                 imageUrl: './Images/drinkItHeader.png',
                 link:{
                     webUrl: 'https://luxury-madeleine-944cc7.netlify.app',
@@ -67,7 +67,7 @@ export const MainPage = (props: Props) => {
             },
             buttons: [
                 {
-                    title: 'DrinkIt 테스트하러가기',
+                    title: 'Empty glass, Fully relaxed.',
                     link: {
                         webUrl: 'https://luxury-madeleine-944cc7.netlify.app',
                     }
