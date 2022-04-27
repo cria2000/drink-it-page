@@ -94,6 +94,7 @@ export const MainPage = (props: Props) => {
 
     return (
         <div className='main_page'>
+            <input style={{border: "solid 1px white"}}/>
             <img className="drink_it_image" alt='drink_it' src={require(`./Images/drinkItHeader.png`)} />
             <div className="page_title_container">
                 <div className="title">{messages.mainTitle}</div>
