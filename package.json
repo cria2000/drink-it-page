@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://phenomenal-granita-a1752d.netlify.app",
+  "homepage": "https://luxury-madeleine-944cc7.netlify.app",
   "eslintConfig": {
     "extends": [
       "react-app",
